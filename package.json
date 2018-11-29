@@ -1,0 +1,11 @@
+{
+  "name": "site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node -e \"require('fs-extra').copy('src', 'dist')\""
+  },
+  "devDependencies": {
+    "fs-extra": "^7.0.1"
+  }
+}
