@@ -8,4 +8,4 @@ Hi~
 
 [博客](/posts/)
 
-Style by [hyrious](hyrious.me)
+Style by [hyrious](//hyrious.me)
