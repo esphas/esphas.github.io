@@ -1,6 +1,7 @@
 ---
-title: "[无价值] SS Manager 折腾笔记"
-tags: 无价值 折腾
+title: "SS Manager 折腾笔记"
+date: 2018-10-04
+tags: ["无价值", "折腾"]
 ---
 
 因为我也拿着 RB 叔叔某一辆车的钥匙，而另一辆车上某些乘客又需要转移过来，因此我需要给他们都准备一下配置。
@@ -31,7 +32,7 @@ sudo npm i -g shadowsocks-manager --unsafe-perm
 
 接下来是写给 `ssmgr (type s)` 使用的配置文件，它会作为上述 `ss-manager` 的前台，方便起见，我选择直接改默认配置文件 `~/.ssmgr/default.yml`：
 
-```yaml	
+```yaml
 # ~/.ssmgr/default.yml
 type: s
 

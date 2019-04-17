@@ -1,6 +1,7 @@
 ---
 title: 游戏短评：Risk of Rain
-tags: 测评 游戏
+date: 2018-08-28
+tags: ["游戏"]
 ---
 
 科幻风格像素 roguelike 横版平台动作射击 [Risk of Rain](https://store.steampowered.com/app/248820/Risk_of_Rain/)。

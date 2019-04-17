@@ -1,0 +1,9 @@
+
+a {
+  color: slategrey;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
