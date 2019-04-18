@@ -2,6 +2,7 @@
 title: "SS Manager 折腾笔记"
 date: 2018-10-04
 tags: ["无价值", "折腾"]
+modifiedDate: 2019-04-17
 ---
 
 因为我也拿着 RB 叔叔某一辆车的钥匙，而另一辆车上某些乘客又需要转移过来，因此我需要给他们都准备一下配置。
@@ -30,7 +31,7 @@ sudo npm i -g shadowsocks-manager --unsafe-perm
 
 安装 `shadowsocks-libev` 的过程略。
 
-接下来是写给 `ssmgr (type s)` 使用的配置文件，它会作为上述 `ss-manager` 的前台，方便起见，我选择直接改默认配置文件 `~/.ssmgr/default.yml`：
+接下来是写给 `ssmgr (type s)` 使用的配置文件，它会作为上述 `ss-manager` 的前台，方便起见，我选择直接改默认配置文件 `~/.ssmgr/default.yml`：
 
 ```yaml
 # ~/.ssmgr/default.yml
@@ -48,7 +49,7 @@ db: 'db.sqlite'
 
 接下来是管理器，项目的 Readme 里面列了四种管理方式，有兴趣自己去看，配置方式大同小异。仍然是出于方便考虑及个人兴趣，我选择了 `telegram`。
 
-首先去找 [BotFather](https://telegram.me/BotFather) 新建了个机器人，获得 token，接下来写配置，新建配置于 `~/.ssmgr/telegram.yml`：
+首先去找 [BotFather](https://telegram.me/BotFather) 新建了个机器人，获得 token，接下来写配置，新建配置于 `~/.ssmgr/telegram.yml`：
 
 ```yaml
 # ~/.ssmgr/telegram.yml
