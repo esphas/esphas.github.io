@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://icefla.me/2019-07-24-new-game/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://icefla.me/2019-04-18-rebuilding/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://icefla.me/2018-12-31-summary/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://icefla.me/2018-10-04-ss-manager/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://icefla.me/2018-08-28-risk-of-rain/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://icefla.me/2018-07-28-monthly-summary/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://icefla.me/2018-07-04-terroir/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://icefla.me/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://icefla.me/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://icefla.me/friends/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://icefla.me/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>
