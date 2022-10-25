@@ -35,6 +35,10 @@ const FriendsPage = () => (
         name="invwindy"
         link="http://cirno.mist.so/"
       />
+      <Friend
+        name="Ulysses"
+        link="https://ulysseszh.github.io/"
+      />
     </ul>
   </Layout>
 );
