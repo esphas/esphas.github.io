@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[retlA]]></title><description><![CDATA[Thoughts on gaming, life, programming, and any other useless things.]]></description><link>https://icefla.me</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 25 Oct 2022 09:36:50 GMT</lastBuildDate><item><title><![CDATA[NEW GAME!]]></title><description><![CDATA[毕业了，离开南京，入职了，来到上海。]]></description><link>https://icefla.me/2019-07-24-new-game/</link><guid isPermaLink="false">https://icefla.me/2019-07-24-new-game/</guid><pubDate>Wed, 24 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;毕业了，离开南京，入职了，来到上海。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;6 月中毕业了，合影，聚餐，各奔前程。我也来到上海公司边租了一间小卧室。虽然地方不大，但是自己的窝自己安排布置，大体也还算满意。有几个同学来了同一家公司，住的也很近，也算是相互有个照应。&lt;/p&gt;
+&lt;p&gt;给自己放了最后半个暑假，前天终于入职了，公司环境氛围都挺不错，工作看上去也不是很忙，尤其是作为新人，基本就是奉旨摸鱼，闲得慌。&lt;/p&gt;
+&lt;p&gt;人际关系方面还是不太擅长，有事情或者有人找我的时候倒还好，平时没事根本不知道怎么与人搭话，迷茫。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[论个人博客的重建工作]]></title><description><![CDATA[自从 2015 年了解到 Github Pages 以来，这个小小的个人博客已经经历了多次销毁和重建。这种事情的发生基本上会有两种原因：一种是学到了新的技术，对之前的构造不满意；另一种是很久没写博客，回来一看感觉以前写的都是什么玩意，清空内容之后一个顺手就决定更换样式框架并重建。]]></description><link>https://icefla.me/2019-04-18-rebuilding/</link><guid isPermaLink="false">https://icefla.me/2019-04-18-rebuilding/</guid><pubDate>Thu, 18 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;自从 2015 年了解到 &lt;a href=&quot;http://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; 以来，这个小小的个人博客已经经历了多次销毁和重建。这种事情的发生基本上会有两种原因：一种是学到了新的技术，对之前的构造不满意；另一种是很久没写博客，回来一看感觉以前写的都是什么玩意，清空内容之后一个顺手就决定更换样式框架并重建。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;有一段时间，我意识到我写的文章基本上没有什么价值，往往都在讲一些早已有人讲过的事情。也是基于这种想法，我会很轻易地决定删除之前的博文。不过我现在又意识到，要做的是写有价值的东西，而不是持续讨论无价值之物的无价值。总而言之，我再次重建了这个博客。与以前不同，以前的多次重建中，建成博客本身就达到了目的，建成之后写什么倒无所谓了。并且就在这次重建之前，我学会了从另一个角度发掘事物的价值，换句话说我发现我之前写的那些东西也不是完全没有用，这个发现本身对我来说也算是一个意外之喜。&lt;/p&gt;
+&lt;p&gt;本来还想写一写诸如“为什么要写博客”之类的话题，但是写着写着我发现其实我并没有想好，简单地说最重要的无非是分享想法这件事让我感觉很不错。其他还有很多原因，比如能提升表述能力，比如巩固知识，比如记录成长，但是总结起来也不是一时半会的事情了。况且说到底，只是因为想写罢了。&lt;/p&gt;
+&lt;p&gt;就技术选择而言，我仍然决定将其托管在 Github Pages 上，坚持 &lt;a href=&quot;https://jamstack.org/&quot;&gt;JAMstack&lt;/a&gt;。但是使用的 Static Generator 改成了 &lt;a href=&quot;https://www.gatsbyjs.org/&quot;&gt;Gatsby&lt;/a&gt;，一方面是因为我对 React 比较感兴趣，另一方面是因为其目前看来很受欢迎。作为我最早使用的 StaticGen，我也考虑过 &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;，但是最终还是没有选择它……主要是 Jekyll 4.0 还没有发布正式版（预览版已经发布了）。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2018 年度总结]]></title><description><![CDATA[是的，又是一年过去了。]]></description><link>https://icefla.me/2018-12-31-summary/</link><guid isPermaLink="false">https://icefla.me/2018-12-31-summary/</guid><pubDate>Mon, 31 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;是的，又是一年过去了。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;开始写博客实际上是很久以前的事情了，目前我留有存档的最早的一篇写于 2015 年 7 月 9 日，日记性质的，记录了当天发生的一件小事。在 2015 年 11 月 30 日，我写了篇 delayed hello world 讲我当时是怎么配博客环境的，基本也是惯例了。那一年的最后一篇博客在 12 月 30 日，我分享了&lt;a href=&quot;//ss64.com/nt/syntax-variables.html&quot;&gt;一个链接&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;2016 年的第一篇博客写于……元旦，里面用一句话对 15 年进行了总结：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;nothing to commit, working directory clean&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2016 年的 1 月 21 日我写了篇 Witcher 游戏系列的剧情总结，下一篇我能找到的文章在 2017 年 6 月 2 日。这一年半之间我或许写了其他的内容，或许一个字也没写。但是总而言之，我没法找到我对我 2016 年的年度总结了。这一年的最后一篇文章在是 2017 年 10 月 28 日，我对十月份进行了总结。&lt;/p&gt;
+&lt;p&gt;再下一篇就在 2018 年 7 月 4 日，对 Terroir 游戏进行了评价。中间又是近一年没有记录，大概是真的没写。因此我也不知道我当时是怎么评价我的 2017 年的。&lt;/p&gt;
+&lt;p&gt;今年呢？&lt;/p&gt;
+&lt;p&gt;越是成长，越是感觉时光匆匆。小时候感觉一年很长，每年都有很多事情，现在我只觉得一年碌碌，什么也没有做，没有任何实感，就这样平淡地度过了。&lt;/p&gt;
+&lt;p&gt;仿佛我就从去年直接跳到了今年，然后如同旁观者一样获得了这一年的记忆。不过，即使是从这种劣质电影一样的记忆中，也是能找到一些有用的信息的。&lt;/p&gt;
+&lt;p&gt;上半年的课程很多，考试科目也很多，尤其是有几门以前挂科现在重修的，最终期末考试连考六天，所幸全数通过。暑假并没有在家里久待，很早就返校选择准备考研。&lt;/p&gt;
+&lt;p&gt;考研复习初期信心满满，临考了却没有了任何底气，直接放弃考试了。我考研呢？&lt;/p&gt;
+&lt;p&gt;之前还承接了龙魂的脚本工作，很是肝了一阵子。学校里一些杂七杂八的事情，临近死线了，也都顺利结束了。后天要交一份偏微分的课程作业，然后就算是进入了一个短期的自由阶段。&lt;/p&gt;
+&lt;p&gt;这几天在刷星际剧情战役的成就，人族全成就唯独差一个残酷难度最后一关，自从前天卡住了之后，这几天也没有再开过游戏，找个机会一定要把它搞定。&lt;/p&gt;
+&lt;p&gt;在大学的四年眼看走到了尾声，回想起来，也实在是浪费了不少，但是比起后悔，更重要的是汲取经验。话说回来，若不是犯了错误，也不会有这种认知，归根到底，事实上是无法避免的。反省自己，的确是一个缺乏规划和紧迫感的人。下一年会不一样的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果能早些行动……&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[SS Manager 折腾笔记]]></title><description><![CDATA[因为我也拿着 RB 叔叔某一辆车的钥匙，而另一辆车上某些乘客又需要转移过来，因此我需要给他们都准备一下配置。 众所周知（？） 是不资瓷  这种配置方便但是管理不便的配置项的，所以仍然是在 RB 叔叔的提醒下，我了解到了 。 虽然在写下这段话的时候，我才刚打开  的 GitHub 页面，但是我对于成功有着强烈的信心。 本文未包含任何有深度的内容]]></description><link>https://icefla.me/2018-10-04-ss-manager/</link><guid isPermaLink="false">https://icefla.me/2018-10-04-ss-manager/</guid><pubDate>Thu, 04 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;因为我也拿着 RB 叔叔某一辆车的钥匙，而另一辆车上某些乘客又需要转移过来，因此我需要给他们都准备一下配置。&lt;/p&gt;
+&lt;p&gt;众所周知（？）&lt;code class=&quot;language-text&quot;&gt;shadowsocks-libev&lt;/code&gt; 是不资瓷 &lt;code class=&quot;language-text&quot;&gt;port_passward&lt;/code&gt; 这种配置方便但是管理不便的配置项的，所以仍然是在 RB 叔叔的提醒下，我了解到了 &lt;code class=&quot;language-text&quot;&gt;shadowsocks-manager&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;虽然在写下这段话的时候，我才刚打开 &lt;code class=&quot;language-text&quot;&gt;ss-manager&lt;/code&gt; 的 GitHub 页面，但是我对于成功有着强烈的信心。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本文未包含任何有深度的内容&lt;/strong&gt;&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2&gt;一言以蔽之&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ss-manager&lt;/code&gt; 通过 &lt;code class=&quot;language-text&quot;&gt;--manager-address&lt;/code&gt; 选项监听端口 &lt;code class=&quot;language-text&quot;&gt;port 1&lt;/code&gt;，而 &lt;code class=&quot;language-text&quot;&gt;ssmgr (type s)&lt;/code&gt; 作为它的前台，会发送指令到 &lt;code class=&quot;language-text&quot;&gt;port 1&lt;/code&gt;，同时监听 &lt;code class=&quot;language-text&quot;&gt;port 2&lt;/code&gt;，&lt;code class=&quot;language-text&quot;&gt;ssmgr (type m)&lt;/code&gt; 就是最终的总管，（通过插件提供的各种方式）管理一系列 &lt;code class=&quot;language-text&quot;&gt;ssmgr (type s)&lt;/code&gt;。&lt;/p&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;首先当然是读 Readme 安装了，因为突然发现这辆车没有 &lt;code class=&quot;language-text&quot;&gt;node&lt;/code&gt;，所以先去装了 &lt;code class=&quot;language-text&quot;&gt;node&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--silent&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--location&lt;/span&gt; https://rpm.nodesource.com/setup_8.x &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt; -
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; yum &lt;span class=&quot;token parameter variable&quot;&gt;-y&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; nodejs
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i &lt;span class=&quot;token parameter variable&quot;&gt;-g&lt;/span&gt; shadowsocks-manager --unsafe-perm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;安装 &lt;code class=&quot;language-text&quot;&gt;shadowsocks-libev&lt;/code&gt; 的过程略。&lt;/p&gt;
+&lt;p&gt;接下来是写给 &lt;code class=&quot;language-text&quot;&gt;ssmgr (type s)&lt;/code&gt; 使用的配置文件，它会作为上述 &lt;code class=&quot;language-text&quot;&gt;ss-manager&lt;/code&gt; 的前台，方便起见，我选择直接改默认配置文件 &lt;code class=&quot;language-text&quot;&gt;~/.ssmgr/default.yml&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# ~/.ssmgr/default.yml&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; s
+
+&lt;span class=&quot;token key atrule&quot;&gt;shadowsocks&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 127.0.0.1&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;端口1
+
+&lt;span class=&quot;token key atrule&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0.0.0.0&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;端口2
+  &lt;span class=&quot;token key atrule&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;密码&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token key atrule&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;db.sqlite&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;接下来是管理器，项目的 Readme 里面列了四种管理方式，有兴趣自己去看，配置方式大同小异。仍然是出于方便考虑及个人兴趣，我选择了 &lt;code class=&quot;language-text&quot;&gt;telegram&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;首先去找 &lt;a href=&quot;https://telegram.me/BotFather&quot;&gt;BotFather&lt;/a&gt; 新建了个机器人，获得 token，接下来写配置，新建配置于 &lt;code class=&quot;language-text&quot;&gt;~/.ssmgr/telegram.yml&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# ~/.ssmgr/telegram.yml&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; m
+
+&lt;span class=&quot;token key atrule&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 127.0.0.1&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;端口2
+  &lt;span class=&quot;token key atrule&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;密码&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token key atrule&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;telegram&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;token&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token key atrule&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;telegram.sqlite&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后写启动脚本，放在一个我开心就好的地方：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+setsid ss-manager &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; 加密方式 &lt;span class=&quot;token parameter variable&quot;&gt;-u&lt;/span&gt; --manager-address &lt;span class=&quot;token number&quot;&gt;127.0&lt;/span&gt;.0.1:端口1 &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;
+setsid ssmgr &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;
+setsid ssmgr &lt;span class=&quot;token parameter variable&quot;&gt;-c&lt;/span&gt; ~/.ssmgr/telegram.yml &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;试运行一下，没有问题，那就可以准备添加开机启动了，至于如何添加开机启动，那就请大家根据自己的情况，另请高明吧。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[游戏短评：Risk of Rain]]></title><description><![CDATA[科幻风格像素 roguelike 横版平台动作射击 Risk of Rain。 简单概括：上手简单，像素画面加分，音乐音效也很合适，但是我仍然没有成功联机；说实话联机的话应该会更耐玩，不过很遗憾，毕竟一代新人换旧人，既然没联上，我还是选择去玩新游戏了，也许以后还会拿出来玩，但是终归是没有玩新游戏的时候的那种全成就的执念。]]></description><link>https://icefla.me/2018-08-28-risk-of-rain/</link><guid isPermaLink="false">https://icefla.me/2018-08-28-risk-of-rain/</guid><pubDate>Tue, 28 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;科幻风格像素 roguelike 横版平台动作射击 &lt;a href=&quot;https://store.steampowered.com/app/248820/Risk_of_Rain/&quot;&gt;Risk of Rain&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;简单概括：上手简单，像素画面加分，音乐音效也很合适，但是我仍然没有成功联机；说实话联机的话应该会更耐玩，不过很遗憾，毕竟一代新人换旧人，既然没联上，我还是选择去玩新游戏了，也许以后还会拿出来玩，但是终归是没有玩新游戏的时候的那种全成就的执念。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;游戏流程说白了就是……从地图出生点出发，寻找传送器并激活，等待激活完成，传送进入下一个地图。在激活之前地图中会不断地生成敌人，激活的时候会生成关卡 boss。作为一个典型的 roguelike，杀死敌怪会获得金币和经验（升级），并且可以在随机生成的资源点购买道具和能力，而这一切又会随着你的死亡消失——当然了，会有 unlocks，也就是在各次游戏中能保存下来的解锁品。&lt;/p&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;很有趣&lt;/del&gt;不对，我是说&lt;del&gt;很吸引人&lt;/del&gt;……也不对，这不是显得我完全就是在无脑吹捧这款游戏吗？总之你们明白我的意思了吧。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;暂时没想到。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下是认真版。&lt;/p&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我喜欢像素画风，而它的像素画的很好；&lt;/li&gt;
+&lt;li&gt;我喜欢 roguelike，而它的 roguelike 也处理得很好；&lt;/li&gt;
+&lt;li&gt;音乐和游戏的节奏搭配得很好（貌似音乐本身的质量也很高，但是我玩的时候心神完全在操作上……也许这也从另一个角度说明了音乐的质量吧）；&lt;/li&gt;
+&lt;li&gt;游戏反馈自然，没有出戏的地方，是能让人投入进去的游戏。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;虽然开头有说上手简单，也有说能让人投入进去，但是实际上还是有些过于劳心费力了，一不小心的话，是会很轻易地死掉的；&lt;/li&gt;
+&lt;li&gt;战斗中操作是很流畅了，但是菜单方面的反馈就有点……容易让我误操作（好在也没有多少需要菜单的地方）；&lt;/li&gt;
+&lt;li&gt;某些地方字体字号安排有些伤眼，是的，我有时候会看不清或者来不及看；&lt;/li&gt;
+&lt;li&gt;也许会让人有重复操作的厌倦感。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;国区价格￥36，这个安排我认为是适当的，但是这款游戏毕竟时间很久了……所以还是建议等打折再入手。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[七月小结]]></title><description><![CDATA[再次敲下这个标题，心情还是挺复杂的。大约在一年前的这个月，我也写了一篇月度总结。而且我现在稍一回想，上个七月写的内容和这次写的也没差多少，总而言之就是“我这个月又啥也没干”。]]></description><link>https://icefla.me/2018-07-28-monthly-summary/</link><guid isPermaLink="false">https://icefla.me/2018-07-28-monthly-summary/</guid><pubDate>Sat, 28 Jul 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;再次敲下这个标题，心情还是挺复杂的。大约在一年前的这个月，我也写了一篇月度总结。而且我现在稍一回想，上个七月写的内容和这次写的也没差多少，总而言之就是“我这个月又啥也没干”。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;至于这一整个月具体做了什么些事情呢……我也不太清楚，一条条列一下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;游戏玩了不少，Steam 库又充实了一些，而且还有计划认真打游戏，好好写评测（虽然实际上也没做到）；&lt;/li&gt;
+&lt;li&gt;小说也看了不少，甚至还参与了数次实践是检验真理的唯一标准大讨论，当然了，要说有什么实际的作用的话……好像的确是没有，不过至少我很开心，我开心就好（这种话真的有点欠打）；&lt;/li&gt;
+&lt;li&gt;听了些歌，水了不少群，整天都在水群，我迟早要把我这个只知道水群和复读的人杀了；&lt;/li&gt;
+&lt;li&gt;打了一点码，主要是这几天的事情，先给锅盖写完了 YAWMP，然后把本博客的前端再再再次从白纸重写了一次，这次玩了一下 AMP（虽然不太懂，但是还挺有意思的，就是写起来头疼），以及用着 JSONbin.io 作数据存储，在 xd 的车上用 node 跑了个微服务，做了个博客评论，也就是下面这玩意，目前还很原始，慢慢改（如果我有时间的话）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;暑假浪费一半倒也不算什么，问题是去年浪费了今年还接着浪费，这就不应该了。所以我把去年的文章都收起来了，至少看上去我只玩了这一次。搞不好这文章我明年还得收起来，这么一想也算是限时体验，先到先得，各位看到的人都赚了。&lt;/p&gt;
+&lt;p&gt;当然了，上个七月我还是有时间任性的，大二刚结束，当时眼前也没什么要紧的计划，基本上也就是划船不靠桨，整个暑假都在浪。这个七月不太一样了，怎么说也是要考研的人，说荒废就荒废了一个月，更不应该了。&lt;/p&gt;
+&lt;p&gt;不过我这人别的优点也没有，唯一的优点就是心态稳定，积极乐观。问题很大，慌也没用，暑假还有大半个八月，好好把握也不差。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[游戏短评：Terroir]]></title><description><![CDATA[葡萄酒酿造主题模拟经营 Terroir。 一言以蔽之：未达到预期水平，质量尚可，但不值得原价（￥58），好在我也是打折的时候入的……]]></description><link>https://icefla.me/2018-07-04-terroir/</link><guid isPermaLink="false">https://icefla.me/2018-07-04-terroir/</guid><pubDate>Wed, 04 Jul 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;葡萄酒酿造主题模拟经营 &lt;a href=&quot;https://store.steampowered.com/app/559910/Terroir/&quot;&gt;Terroir&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;一言以蔽之：未达到预期水平，质量尚可，但不值得原价（￥58），好在我也是打折的时候入的……&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;游戏的基本流程非常简单：买地，种葡萄，收葡萄，酿酒，卖酒……
+六边形网格游戏地图，按月进展的时间线，低多边形画风，不算出彩但也不出戏的背景音乐，比较充实的内容……
+在首次游玩的过程中还是很能吸引我的，但是一旦回过神来放下，就再也不想玩第二次了（腐烂的眼神）。&lt;/p&gt;
+&lt;p&gt;主要优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;葡萄酒酿造主题比较有新意，而且融入得也不错&lt;/li&gt;
+&lt;li&gt;暂时想不到第二个优点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;主要问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;交互操作有点僵硬&lt;/strong&gt;，主要体现在某些行为缺少反馈，以及某些自动行为的不合理设计（说的就是你，时间流速切换）&lt;/li&gt;
+&lt;li&gt;画面是还不错啦，可是 UI 真的不是让程序员画的吗？&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;帮助文本缺乏设计感&lt;/strong&gt;，尽管某些地方也提供了画面和语音，但是感觉还是很不自然，说到底玩个游戏直接甩人一脸帮助手册就不太对吧？这个游戏真的脱离了抢先体验吗？&lt;/li&gt;
+&lt;li&gt;有一些莫名其妙的功能，具体哪些……嘛，这也是见仁见智的事情，就当没有这条吧&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;机械重复的劳动&lt;/strong&gt;，玩家的主要工作就是修枝剪叶、修枝剪叶以及看天气修枝剪叶，而且这游戏的天气系统还是非常随机并且没有预测手段的，真正让玩家体验到了农民伯伯看天吃饭的辛酸，说实话我不推荐非洲人购买此游戏&lt;/li&gt;
+&lt;li&gt;唯一的难点在于看天气修剪枝叶，其他方面难度系数根本不存在，玩到后面根本不是玩家在玩游戏，而是玩家成为了一个响应随机事件的齿轮，&lt;strong&gt;玩家被游戏玩&lt;/strong&gt;……游戏内容是不少，但是由于不合理的设计，这游戏杀时间很严重（说到底是需要的重复劳作太多了），因此玩家单位时间能体验到的内容就不多了……就结论而言，&lt;strong&gt;容易让人感觉枯燥&lt;/strong&gt;，即使当时不觉得，放下游戏也会像我一样不想再玩的（摆手，说不出话.jpg）&lt;/li&gt;
+&lt;li&gt;暂时只想到这么多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;虽然看起来对这游戏批判了一番，但是这游戏其实还是很不错的（点头），只要不是非洲人，我还是推荐大家去趁打折购买的，毕竟……打折后也不贵，花的也不是我的钱（逃）&lt;/p&gt;
+&lt;p&gt;而且对于某些人来说，反正花了钱买，也不会再花时间去玩是吧（笑）&lt;/p&gt;</content:encoded></item></channel></rss>
