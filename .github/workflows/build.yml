@@ -17,6 +17,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      - run: npm run verify
       - run: npm run build
       - uses: JamesIves/github-pages-deploy-action@v4
         if: github.event_name != 'pull_request'

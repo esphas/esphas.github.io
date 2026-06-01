@@ -1,7 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
-import { getExcerpt, getPostNeighbors, getPostSlug, getSortedPosts } from '../../utils/posts';
+import {
+  getPostNeighbors,
+  getPostSlug,
+  getPostSummary,
+  getSortedPosts,
+} from '../../utils/posts';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -16,13 +21,33 @@ const { Content } = await render(post);
 const sortedPosts = getSortedPosts(await getCollection('posts'));
 const slug = getPostSlug(post);
 const { previous, next } = getPostNeighbors(sortedPosts, slug);
-const description =
-  post.data.description ?? getExcerpt(post.body ?? '');
+const description = getPostSummary(post);
+
+const formatDate = (date: Date) => date.toISOString().slice(0, 10);
+const published = formatDate(post.data.date);
+const modified = post.data.modifiedDate
+  ? formatDate(post.data.modifiedDate)
+  : null;
+const showModified = modified !== null && modified !== published;
 ---
 
 <Layout title={post.data.title} description={description}>
   <article>
-    <h1>{post.data.title}</h1>
+    <div class="post-header">
+      <h1>{post.data.title}</h1>
+      <div class="post-meta">
+        <time datetime={post.data.date.toISOString()}>
+          发布于 {published}
+        </time>
+        {
+          showModified && post.data.modifiedDate && (
+            <time datetime={post.data.modifiedDate.toISOString()}>
+              最后编辑于 {modified}
+            </time>
+          )
+        }
+      </div>
+    </div>
     <Content />
   </article>
   <div class="post-nav">
@@ -34,11 +59,7 @@ const description =
       }
     </span>
     <span>
-      {
-        next && (
-          <a href={`/posts/${getPostSlug(next)}/`}>Next&gt;</a>
-        )
-      }
+      {next && <a href={`/posts/${getPostSlug(next)}/`}>Next&gt;</a>}
     </span>
   </div>
 </Layout>

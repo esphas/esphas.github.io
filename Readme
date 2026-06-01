@@ -1,21 +1,3 @@
 === Momokoi ===
 
 Personal site at [icefla.me](https://icefla.me).
-
-Built with
-
-- [Astro](https://astro.build/)
-- Markdown content
-- GitHub Pages
-- GitHub Actions
-
-## Development
-
-```bash
-npm install
-npm run dev
-```
-
-## Deploy
-
-Push to the `source` branch. GitHub Actions builds the site and deploys `dist/` to the `master` branch for GitHub Pages.

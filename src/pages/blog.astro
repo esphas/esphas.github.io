@@ -13,9 +13,7 @@ const posts = getSortedPosts(await getCollection('posts'));
         <a href={`/posts/${getPostSlug(post)}/`}>
           <h4>{post.data.title}</h4>
         </a>
-        <span>
-          {post.data.date.toISOString().slice(0, 10)}
-        </span>
+        <span>{post.data.date.toISOString().slice(0, 10)}</span>
       </div>
     ))
   }

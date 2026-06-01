@@ -1,7 +1,7 @@
 ---
-title: "SS Manager 折腾笔记"
+title: 'SS Manager 折腾笔记'
 date: 2018-10-04
-tags: ["无价值", "折腾"]
+tags: ['无价值', '折腾']
 modifiedDate: 2019-04-17
 ---
 
