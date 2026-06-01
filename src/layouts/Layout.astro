@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import { SITE } from '../consts';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = SITE.description } = Astro.props;
+const pageTitle = title ? SITE.titleTemplate(title) : SITE.title;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="page-inner">
+        <div class="container">
+          <header>
+            <nav>
+              <ul class="nav-list">
+                <li><a href="/">Momokoi</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/friends/">Friends</a></li>
+                <li><a href="/rss.xml">RSS</a></li>
+                <li><a href="/about/">About</a></li>
+              </ul>
+            </nav>
+          </header>
+          <main>
+            <slot />
+          </main>
+          <footer>
+            <div>(C) 2015–{new Date().getFullYear()} Esphas</div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

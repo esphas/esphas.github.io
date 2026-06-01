@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import friends from '../data/friends.json';
+---
+
+<Layout title="Friends">
+  <ul class="friends-list">
+    {
+      friends.map((friend) => (
+        <li>
+          <p>
+            <a href={friend.link}>{friend.name}</a>
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

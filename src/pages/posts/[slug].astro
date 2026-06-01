@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import { getExcerpt, getPostNeighbors, getPostSlug, getSortedPosts } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: getPostSlug(post) },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const sortedPosts = getSortedPosts(await getCollection('posts'));
+const slug = getPostSlug(post);
+const { previous, next } = getPostNeighbors(sortedPosts, slug);
+const description =
+  post.data.description ?? getExcerpt(post.body ?? '');
+---
+
+<Layout title={post.data.title} description={description}>
+  <article>
+    <h1>{post.data.title}</h1>
+    <Content />
+  </article>
+  <div class="post-nav">
+    <span>
+      {
+        previous && (
+          <a href={`/posts/${getPostSlug(previous)}/`}>&lt;Previous</a>
+        )
+      }
+    </span>
+    <span>
+      {
+        next && (
+          <a href={`/posts/${getPostSlug(next)}/`}>Next&gt;</a>
+        )
+      }
+    </span>
+  </div>
+</Layout>

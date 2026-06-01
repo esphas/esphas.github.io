@@ -1,10 +1,11 @@
-
 node_modules/
 
 .vscode
+.cursor
+.codegraph
 
 temp/
 tmp/
 
-.cache
-public
+dist
+.astro

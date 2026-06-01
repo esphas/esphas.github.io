@@ -1,13 +1,21 @@
 === Momokoi ===
 
+Personal site at [icefla.me](https://icefla.me).
+
 Built with
-- Github Pages
-- Gatsby (React)
-- Typography.js
-- Emotion
-- Travis CI
-- Node.js
-- yarn
-- Visual Studio Code
-- Git of course
-- and many more great stuffs
+
+- [Astro](https://astro.build/)
+- Markdown content
+- GitHub Pages
+- GitHub Actions
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Deploy
+
+Push to the `source` branch. GitHub Actions builds the site and deploys `dist/` to the `master` branch for GitHub Pages.

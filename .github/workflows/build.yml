@@ -1,25 +1,26 @@
-
 name: Build
 
 on:
   push:
-    branches: [ source ]
+    branches: [source]
   pull_request:
-    branches: [ source ]
+    branches: [source]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '14'
-      - run: npm install
+          node-version: '22'
+          cache: npm
+      - run: npm ci
       - run: npm run build
-      - uses: JamesIves/github-pages-deploy-action@4.1.5
+      - uses: JamesIves/github-pages-deploy-action@v4
+        if: github.event_name != 'pull_request'
         with:
-          folder: public
+          folder: dist
           branch: master
           single-commit: true
