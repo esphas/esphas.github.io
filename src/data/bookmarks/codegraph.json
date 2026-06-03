@@ -1,0 +1,10 @@
+{
+  "order": "o[tools]-o[llm]-o[codegraph]",
+  "title": "CodeGraph",
+  "description": "为项目预先构建索引，减少 token 消耗",
+  "type": "live",
+  "adapter": "github",
+  "config": {
+    "repo": "colbymchenry/codegraph"
+  }
+}

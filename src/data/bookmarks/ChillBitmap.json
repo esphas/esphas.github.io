@@ -1,0 +1,10 @@
+{
+  "order": "o[resources]-o[font]-o[pixel]-o[chillbitmap]",
+  "title": "寒蝉点阵体",
+  "description": "拥有两风格的像素字体",
+  "type": "live",
+  "adapter": "github",
+  "config": {
+    "repo": "Warren2060/ChillBitmap"
+  }
+}

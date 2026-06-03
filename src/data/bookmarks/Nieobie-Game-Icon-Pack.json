@@ -1,0 +1,10 @@
+{
+  "order": "o[resources]-o[assets]-o[nieobie]",
+  "title": "Nieobie Game Icon Pack",
+  "description": "570+ 个圆润风格图标",
+  "type": "live",
+  "adapter": "github",
+  "config": {
+    "repo": "Nieobie/Game-Icon-Pack"
+  }
+}
