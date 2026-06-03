@@ -1,0 +1,56 @@
+name: Sync live feeds
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: source
+
+      - uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data-prev
+        continue-on-error: true
+
+      - name: Restore previous feeds
+        run: |
+          if [ -d data-prev/feeds ]; then
+            mkdir -p feeds
+            cp -r data-prev/feeds/. feeds/
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+      - run: npx playwright install chromium
+      - run: npm run sync:feeds
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: feeds
+          branch: data
+          target-folder: feeds
+          single-commit: true
+
+      - name: Trigger site rebuild
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: feeds-updated
