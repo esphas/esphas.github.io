@@ -1,0 +1,235 @@
+---
+import type { BookmarkEntry } from '../utils/bookmarks';
+import BookmarkDescription from './BookmarkDescription.astro';
+import BookmarkFeedPanel from './BookmarkFeedPanel.astro';
+import {
+  getBookmarkDescription,
+  getBookmarkHref,
+  getBookmarkTitle,
+  getLiveFeedKey,
+} from '../utils/bookmarks';
+import {
+  daysUntilExpiry,
+  formatExpiryLabel,
+  resolveCreativeMarketExpiresAt,
+} from '../utils/feed-expiry';
+import {
+  groupBundlesByCategory,
+  HUMBLE_BUNDLE_CATEGORY_LABELS,
+} from '../bookmarks/adapters/humblebundle';
+import type { HumbleBundleCategory } from '../bookmarks/adapters/humblebundle-parse';
+import { readSeedFeed } from '../utils/feed-seed';
+
+interface Props {
+  bookmark: BookmarkEntry;
+  index: number;
+}
+
+const { bookmark, index } = Astro.props;
+const { data } = bookmark;
+const title = getBookmarkTitle(data);
+const description = getBookmarkDescription(data);
+const href = getBookmarkHref(data);
+const descId = `bookmark-desc-${index}`;
+const adapter = data.type === 'live' ? data.adapter : null;
+const feedKey = data.type === 'live' ? getLiveFeedKey(data) : null;
+const seedFeed = feedKey ? readSeedFeed(feedKey) : null;
+const hasSeedFeed = Boolean(seedFeed?.items?.length);
+
+const cmExpiryLabel =
+  seedFeed && adapter === 'creativemarket'
+    ? formatExpiryLabel(
+        daysUntilExpiry(resolveCreativeMarketExpiresAt(seedFeed.expiresAt)),
+      )
+    : null;
+
+const hbGroups =
+  seedFeed && adapter === 'humblebundle'
+    ? groupBundlesByCategory(seedFeed.items)
+    : null;
+
+const hbCategories: HumbleBundleCategory[] = ['books', 'games', 'software'];
+---
+
+{
+  data.type === 'url' ? (
+    <li class="bookmark-row bookmark-row--url">
+      <div class="bookmark-row-inner">
+        <a
+          class="bookmark-row-name bookmark-row-name--link"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {title}
+        </a>
+        {description ? (
+          <BookmarkDescription description={description} id={descId} />
+        ) : null}
+        <span class="sr-only">（在新窗口打开）</span>
+      </div>
+    </li>
+  ) : adapter === 'github' ? (
+    <li class="bookmark-row bookmark-row--github">
+      <div class="bookmark-row-inner">
+        <a
+          class="bookmark-row-name bookmark-row-name--link"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {title}
+        </a>
+        {description ? (
+          <BookmarkDescription description={description} id={descId} />
+        ) : null}
+        <span
+          class="bookmark-row-meta list-item-stats is-loading"
+          data-live-slot
+          data-live-adapter={data.adapter}
+          data-live-config={JSON.stringify(data.config)}
+          aria-live="polite"
+          aria-busy="true"
+          aria-label="正在加载仓库数据"
+        >
+          <span
+            class="list-item-stat list-item-stat--skeleton"
+            aria-hidden="true"
+          >
+            <span class="list-item-stat-icon" />
+            <span class="list-item-stat-value" />
+          </span>
+          <span
+            class="list-item-stat list-item-stat--skeleton"
+            aria-hidden="true"
+          >
+            <span class="list-item-stat-icon" />
+            <span class="list-item-stat-value" />
+          </span>
+        </span>
+        <noscript>
+          <span class="bookmark-row-meta-fallback">
+            需要 JavaScript 以显示仓库数据
+          </span>
+        </noscript>
+      </div>
+    </li>
+  ) : adapter === 'creativemarket' ? (
+    <li
+      class:list={[
+        'bookmark-row',
+        'bookmark-row--creativemarket',
+        { 'is-loading': !hasSeedFeed },
+      ]}
+      data-live-row
+      data-live-adapter={data.adapter}
+      data-live-feed-key={feedKey}
+      aria-busy={hasSeedFeed ? undefined : 'true'}
+    >
+      <div class="bookmark-row-inner">
+        <a
+          class="bookmark-row-name bookmark-row-name--link"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {title}
+        </a>
+        {description ? (
+          <BookmarkDescription description={description} id={descId} />
+        ) : null}
+        <details
+          class="bookmark-row-meta bookmark-row-meta--expiry"
+          data-live-expiry-wrap
+        >
+          <summary
+            class="bookmark-row-meta-value"
+            data-live-expiry
+            aria-label={
+              cmExpiryLabel
+                ? `展开 Creative Market 资源详情，${cmExpiryLabel}`
+                : '展开 Creative Market 资源详情'
+            }
+          >
+            {cmExpiryLabel ?? '…'}
+          </summary>
+          <div
+            class="bookmark-row-popover bookmark-row-popover--feed"
+            data-live-hover
+          >
+            {seedFeed ? (
+              <BookmarkFeedPanel
+                items={seedFeed.items}
+                updatedAt={seedFeed.updatedAt}
+                summary={seedFeed.summary}
+                showImages
+              />
+            ) : null}
+          </div>
+        </details>
+      </div>
+    </li>
+  ) : adapter === 'humblebundle' ? (
+    <li
+      class:list={[
+        'bookmark-row',
+        'bookmark-row--humblebundle',
+        { 'is-loading': !hasSeedFeed },
+      ]}
+      data-live-row
+      data-live-adapter={data.adapter}
+      data-live-feed-key={feedKey}
+      aria-busy={hasSeedFeed ? undefined : 'true'}
+    >
+      <div class="bookmark-row-inner">
+        <a
+          class="bookmark-row-name bookmark-row-name--link"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {title}
+        </a>
+        {description ? (
+          <BookmarkDescription description={description} id={descId} />
+        ) : null}
+        <span class="bookmark-row-meta bookmark-row-meta--categories">
+          {hbCategories.map((category) => {
+            const items = hbGroups?.[category] ?? [];
+            const categoryLabel = HUMBLE_BUNDLE_CATEGORY_LABELS[category];
+            const countLabel =
+              items.length > 0 ? `，共 ${items.length} 个 bundle` : '';
+            return (
+              <details
+                class="bookmark-row-category-details"
+                data-live-category={category}
+              >
+                <summary
+                  class="bookmark-row-category"
+                  aria-label={`展开 ${categoryLabel} bundle 列表${countLabel}`}
+                >
+                  {categoryLabel}
+                  <span class="bookmark-row-category-count" data-live-count>
+                    {items.length > 0 ? ` (${items.length})` : ''}
+                  </span>
+                </summary>
+                <div
+                  class="bookmark-row-popover bookmark-row-popover--feed"
+                  data-live-hover
+                >
+                  {seedFeed ? (
+                    <BookmarkFeedPanel
+                      items={[]}
+                      updatedAt={seedFeed.updatedAt}
+                      summary={seedFeed.summaries?.[category]}
+                    />
+                  ) : null}
+                </div>
+              </details>
+            );
+          })}
+        </span>
+      </div>
+    </li>
+  ) : null
+}

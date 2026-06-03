@@ -1,0 +1,71 @@
+---
+import type { LiveFeedItem } from '../bookmarks/adapters/types';
+import { itemDescriptionFromShop } from '../utils/feed-item-text';
+import { formatItemExpiresAtLabel } from '../utils/feed-expiry';
+
+interface Props {
+  items: LiveFeedItem[];
+  updatedAt?: string;
+  summary?: string;
+  showImages?: boolean;
+}
+
+const { items, updatedAt, summary, showImages = false } = Astro.props;
+---
+
+{updatedAt ? <p class="bookmark-hover-panel-meta">更新于 {updatedAt}</p> : null}
+{summary ? <p class="bookmark-hover-panel-summary">{summary}</p> : null}
+<ul class="bookmark-hover-panel-list">
+  {
+    items.map((item) => (
+      <li
+        class:list={[
+          'bookmark-hover-row',
+          { 'bookmark-hover-row--with-image': showImages && item.image },
+        ]}
+      >
+        <span class="bookmark-hover-row-content">
+          {showImages && item.image ? (
+            <img
+              class="bookmark-hover-row-thumb"
+              src={item.image}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              width="40"
+              height="40"
+            />
+          ) : null}
+          <span class="bookmark-hover-row-text">
+            {item.url ? (
+              <>
+                <a
+                  class="bookmark-hover-row-name"
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.title}
+                </a>
+                <span class="sr-only">（在新窗口打开）</span>
+              </>
+            ) : (
+              <span class="bookmark-hover-row-name">{item.title}</span>
+            )}
+            {itemDescriptionFromShop(item.shop) ? (
+              <span class="bookmark-hover-row-desc">
+                {itemDescriptionFromShop(item.shop)}
+              </span>
+            ) : null}
+            {item.expiresAt ? (
+              <span class="bookmark-hover-row-expiry">
+                {formatItemExpiresAtLabel(item.expiresAt)}
+              </span>
+            ) : null}
+          </span>
+        </span>
+      </li>
+    ))
+  }
+</ul>

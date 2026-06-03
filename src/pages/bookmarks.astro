@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BookmarkRow from '../components/BookmarkRow.astro';
+import { getCollection } from 'astro:content';
+import { getSortedBookmarks } from '../utils/bookmarks';
+
+const bookmarks = getSortedBookmarks(await getCollection('bookmarks'));
+---
+
+<Layout title="Bookmarks">
+  {
+    bookmarks.length === 0 ? (
+      <p class="empty-state">还没有书签。</p>
+    ) : (
+      <ul class="bookmark-list">
+        {bookmarks.map((bookmark, index) => (
+          <BookmarkRow bookmark={bookmark} index={index} />
+        ))}
+      </ul>
+    )
+  }
+</Layout>
+
+<script src="../scripts/bookmarks/index.ts"></script>

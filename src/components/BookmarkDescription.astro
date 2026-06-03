@@ -1,0 +1,20 @@
+---
+interface Props {
+  description: string;
+  id: string;
+}
+
+const { description, id } = Astro.props;
+---
+
+<details
+  class="bookmark-row-desc-wrap bookmark-row-desc-wrap--pending"
+  data-bookmark-desc
+>
+  <summary class="bookmark-row-desc" id={id}>
+    {description}
+  </summary>
+  <span class="bookmark-row-desc-popover" role="note" aria-labelledby={id}>
+    {description}
+  </span>
+</details>
