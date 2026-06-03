@@ -1,0 +1,11 @@
+{
+  "type": "live",
+  "order": "o[resources]-o[misc]-o[creativemarket]",
+  "title": "Creative Market",
+  "description": "每周免费设计资源",
+  "adapter": "creativemarket",
+  "config": {
+    "landingUrl": "https://creativemarket.com/free-goods",
+    "feedKey": "creativemarket/free-goods"
+  }
+}

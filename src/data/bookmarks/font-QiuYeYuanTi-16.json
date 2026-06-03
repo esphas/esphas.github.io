@@ -1,0 +1,10 @@
+{
+  "order": "o[resources]-o[font]-o[pixel]-o[qiuyeyuanti]",
+  "title": "秋叶圆体 16",
+  "description": "像素风中文字体",
+  "type": "live",
+  "adapter": "github",
+  "config": {
+    "repo": "yzdnn/QiuYeYuanTi-16"
+  }
+}

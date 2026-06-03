@@ -1,0 +1,7 @@
+{
+  "type": "url",
+  "order": "o[resources]-o[assets]-o[game-icons]",
+  "title": "Game Icons",
+  "description": "SVG/PNG 游戏图标",
+  "url": "https://game-icons.net/"
+}

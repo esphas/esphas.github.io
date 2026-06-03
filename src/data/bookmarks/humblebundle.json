@@ -1,0 +1,12 @@
+{
+  "type": "live",
+  "order": "o[resources]-o[misc]-o[humblebundle]",
+  "title": "Humble Bundle",
+  "description": "限时慈善包",
+  "adapter": "humblebundle",
+  "config": {
+    "landingUrl": "https://www.humblebundle.com/bundles",
+    "feedKey": "humblebundle/bundles",
+    "maxItems": 40
+  }
+}

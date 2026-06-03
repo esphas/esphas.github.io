@@ -13,4 +13,25 @@ const posts = defineCollection({
   }),
 });
 
-export const collections = { posts };
+const bookmarks = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/data/bookmarks' }),
+  schema: z.discriminatedUnion('type', [
+    z.object({
+      type: z.literal('url'),
+      order: z.string(),
+      title: z.string(),
+      description: z.string(),
+      url: z.url(),
+    }),
+    z.object({
+      type: z.literal('live'),
+      order: z.string(),
+      title: z.string(),
+      description: z.string(),
+      adapter: z.enum(['creativemarket', 'github', 'humblebundle']),
+      config: z.record(z.string(), z.unknown()),
+    }),
+  ]),
+});
+
+export const collections = { posts, bookmarks };

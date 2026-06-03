@@ -1,0 +1,7 @@
+{
+  "order": "z[misc]-o[cheetsheet]-o[git]",
+  "title": "Git Cheetsheet",
+  "description": "交互式 Git 速查表",
+  "type": "url",
+  "url": "https://ndpsoftware.com/git-cheatsheet.html"
+}
