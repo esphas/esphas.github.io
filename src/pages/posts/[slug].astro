@@ -50,16 +50,12 @@ const showModified = modified !== null && modified !== published;
     </div>
     <Content />
   </article>
-  <div class="post-nav">
+  <nav class="post-nav" aria-label="文章导航">
     <span>
-      {
-        previous && (
-          <a href={`/posts/${getPostSlug(previous)}/`}>&lt;Previous</a>
-        )
-      }
+      {previous && <a href={`/posts/${getPostSlug(previous)}/`}>← 上一篇</a>}
     </span>
     <span>
-      {next && <a href={`/posts/${getPostSlug(next)}/`}>Next&gt;</a>}
+      {next && <a href={`/posts/${getPostSlug(next)}/`}>下一篇 →</a>}
     </span>
-  </div>
+  </nav>
 </Layout>

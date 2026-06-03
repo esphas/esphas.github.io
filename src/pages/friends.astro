@@ -1,18 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import friends from '../data/friends.json';
+
+const validFriends = friends.filter(
+  (friend) => friend.name?.trim() && friend.link?.trim(),
+);
 ---
 
 <Layout title="Friends">
-  <ul class="friends-list">
-    {
-      friends.map((friend) => (
-        <li>
-          <p>
-            <a href={friend.link}>{friend.name}</a>
-          </p>
-        </li>
-      ))
-    }
-  </ul>
+  {
+    validFriends.length === 0 ? (
+      <p class="empty-state">还没有友链。</p>
+    ) : (
+      <ul class="list-plain friends-list">
+        {validFriends.map((friend) => (
+          <li class="list-item">
+            <a href={friend.link} rel="noopener noreferrer" target="_blank">
+              <span class="list-item-title">{friend.name}</span>
+              <span class="sr-only">（在新窗口打开）</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 </Layout>

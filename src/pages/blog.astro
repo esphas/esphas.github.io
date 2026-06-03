@@ -4,17 +4,37 @@ import { getCollection } from 'astro:content';
 import { getSortedPosts, getPostSlug } from '../utils/posts';
 
 const posts = getSortedPosts(await getCollection('posts'));
+
+const formatDate = (date: Date) => date.toISOString().slice(0, 10);
 ---
 
 <Layout title="Blog">
   {
-    posts.map((post) => (
-      <div class="blog-item">
-        <a href={`/posts/${getPostSlug(post)}/`}>
-          <h4>{post.data.title}</h4>
-        </a>
-        <span>{post.data.date.toISOString().slice(0, 10)}</span>
-      </div>
-    ))
+    posts.length === 0 ? (
+      <p class="empty-state">还没有文章。</p>
+    ) : (
+      <ul class="list-plain">
+        {posts.map((post, index) => {
+          const dateId = `post-date-${index}`;
+          return (
+            <li class="list-item">
+              <a
+                href={`/posts/${getPostSlug(post)}/`}
+                aria-describedby={dateId}
+              >
+                <span class="list-item-title">{post.data.title}</span>
+              </a>
+              <time
+                id={dateId}
+                class="list-item-meta"
+                datetime={post.data.date.toISOString()}
+              >
+                {formatDate(post.data.date)}
+              </time>
+            </li>
+          );
+        })}
+      </ul>
+    )
   }
 </Layout>

@@ -5,10 +5,68 @@ import { SITE } from '../consts';
 interface Props {
   title?: string;
   description?: string;
+  pageHeading?: string;
+  pageHeadingHidden?: boolean;
 }
 
-const { title, description = SITE.description } = Astro.props;
+const {
+  title,
+  description = SITE.description,
+  pageHeading,
+  pageHeadingHidden = false,
+} = Astro.props;
 const pageTitle = title ? SITE.titleTemplate(title) : SITE.title;
+const pathname = Astro.url.pathname;
+
+type NavItem = {
+  href: string;
+  label: string;
+  match: (path: string) => boolean;
+  ariaLabel?: string;
+};
+
+const navItems: NavItem[] = [
+  { href: '/', label: 'Momokoi', match: (path: string) => path === '/' },
+  {
+    href: '/blog/',
+    label: 'Blog',
+    match: (path: string) =>
+      path.startsWith('/blog/') || path.startsWith('/posts/'),
+  },
+  {
+    href: '/bookmarks/',
+    label: 'Bookmarks',
+    match: (path: string) => path.startsWith('/bookmarks/'),
+  },
+  {
+    href: '/friends/',
+    label: 'Friends',
+    match: (path: string) => path.startsWith('/friends/'),
+  },
+  {
+    href: '/rss.xml',
+    label: 'RSS',
+    ariaLabel: 'RSS 订阅源',
+    match: (path: string) => path === '/rss.xml',
+  },
+  {
+    href: '/about/',
+    label: 'About',
+    match: (path: string) => path.startsWith('/about/'),
+  },
+];
+
+const isPostPage = pathname.startsWith('/posts/');
+const effectiveHeading =
+  pageHeading ?? (title && !isPostPage ? title : undefined);
+const headingMatchesNav =
+  effectiveHeading &&
+  navItems.some(
+    (item) =>
+      item.match(pathname) &&
+      (effectiveHeading === item.label || effectiveHeading === item.ariaLabel),
+  );
+const hidePageHeading = pageHeadingHidden || headingMatchesNav;
 ---
 
 <!doctype html>
@@ -22,25 +80,45 @@ const pageTitle = title ? SITE.titleTemplate(title) : SITE.title;
     <title>{pageTitle}</title>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">跳至正文</a>
     <div class="page">
       <div class="page-inner">
         <div class="container">
           <header>
-            <nav>
+            <nav aria-label="站点导航">
               <ul class="nav-list">
-                <li><a href="/">Momokoi</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/friends/">Friends</a></li>
-                <li><a href="/rss.xml">RSS</a></li>
-                <li><a href="/about/">About</a></li>
+                {
+                  navItems.map((item) => (
+                    <li>
+                      <a
+                        href={item.href}
+                        class:list={[{ 'nav-brand': item.href === '/' }]}
+                        data-label={item.label}
+                        aria-current={item.match(pathname) ? 'page' : undefined}
+                        aria-label={item.ariaLabel}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))
+                }
               </ul>
             </nav>
           </header>
-          <main>
+          <main id="main-content">
+            {
+              effectiveHeading && (
+                <header
+                  class:list={['page-header', { 'sr-only': hidePageHeading }]}
+                >
+                  <h1 class="page-title">{effectiveHeading}</h1>
+                </header>
+              )
+            }
             <slot />
           </main>
           <footer>
-            <div>(C) 2015–{new Date().getFullYear()} Esphas</div>
+            <small>(C) 2015–{new Date().getFullYear()} Esphas</small>
           </footer>
         </div>
       </div>
