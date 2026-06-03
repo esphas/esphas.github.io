@@ -3,9 +3,18 @@ node_modules/
 .vscode
 .cursor
 .codegraph
+.agents/
+skills-lock.json
+.impeccable/
+DESIGN.md
+PRODUCT.md
 
 temp/
 tmp/
 
 dist
 .astro
+feeds/
+.env
+.env.*
+!.env.example

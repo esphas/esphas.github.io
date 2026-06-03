@@ -6,19 +6,37 @@ on:
   pull_request:
     branches: [source]
   workflow_dispatch:
+  repository_dispatch:
+    types: [feeds-updated]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data-branch
+        continue-on-error: true
+
+      - name: Merge feeds from data branch
+        run: |
+          if [ -d data-branch/feeds ]; then
+            mkdir -p public/feeds
+            cp -r data-branch/feeds/. public/feeds/
+          fi
+
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
+
       - run: npm ci
       - run: npm run verify
       - run: npm run build
+
       - uses: JamesIves/github-pages-deploy-action@v4
         if: github.event_name != 'pull_request'
         with:
