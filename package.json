@@ -19,7 +19,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^6.4.6",
+    "astro": "^7.1.0",
     "iconify-icon": "^3.0.2"
   },
   "devDependencies": {
