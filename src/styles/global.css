@@ -950,29 +950,29 @@ article {
   line-height: var(--leading-relaxed);
 }
 
-article :global(h1),
-article :global(h2),
-article :global(h3),
-article :global(h4) {
+article,
+article,
+article,
+article {
   text-wrap: balance;
   color: var(--color-text);
 }
 
-article :global(h2) {
+article {
   margin: calc(var(--text-base) * var(--leading-relaxed)) 0 0.75rem;
   font-size: var(--text-lg);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
 }
 
-article :global(h3) {
+article {
   margin: 1.25rem 0 0.5rem;
   font-size: var(--text-base);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
 }
 
-article :global(h4) {
+article {
   margin: 1rem 0 0.375rem;
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
@@ -980,35 +980,35 @@ article :global(h4) {
   letter-spacing: 0.01em;
 }
 
-article :global(p),
-article :global(li) {
+article,
+article {
   text-wrap: pretty;
 }
 
-article :global(p) {
+article {
   margin: 0 0 1rem;
 }
 
-article :global(ul),
-article :global(ol) {
+article,
+article {
   margin: 0 0 1rem;
   padding-left: 1.5rem;
 }
 
-article :global(li) {
+article {
   margin-bottom: 0.375rem;
 }
 
-article :global(li:last-child) {
+article {
   margin-bottom: 0;
 }
 
-article :global(a) {
+article {
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
 
-article :global(pre) {
+article {
   overflow-x: auto;
   padding: var(--space-xs);
   background: var(--color-surface-muted);
@@ -1017,22 +1017,22 @@ article :global(pre) {
   line-height: var(--leading-snug);
 }
 
-article :global(code) {
+article {
   font-family: var(--font-mono);
   font-size: 0.9em;
   font-variant-ligatures: none;
 }
 
-article :global(pre code) {
+article {
   font-size: inherit;
 }
 
-article :global(img) {
+article {
   max-width: 100%;
   height: auto;
 }
 
-article :global(blockquote) {
+article {
   margin: 0 0 1rem;
   padding: var(--space-xs) var(--space-sm);
   background: var(--color-surface-muted);
