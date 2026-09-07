@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="因为我也拿着 RB 叔叔某一辆车的钥匙，而另一辆车上某些乘客又需要转移过来，因此我需要给他们都准备一下配置。 众所周知（？）shadowsocks-libev 是不资瓷 portpassward 这种配置方便但是管理不便的配置项的，所以仍然是在 RB 叔叔的提醒下，我了解到了 shadowsocks-manager。…"><meta name="generator" content="Astro v7.1.3"><link rel="icon" type="image/png" href="/favicon.png"><title>SS Manager 折腾笔记 · Momokoi</title><link rel="stylesheet" href="/_astro/Layout.CyaJmSDB.css"></head><body><a class="skip-link" href="#main-content">跳至正文</a><div class="page"><div class="page-inner"><div class="container"><header><nav aria-label="站点导航"><ul class="nav-list"><li><a href="/" class="nav-brand" data-label="Momokoi">Momokoi</a></li><li><a href="/blog/" data-label="Blog" aria-current="page">Blog</a></li><li><a href="/friends/" data-label="Friends">Friends</a></li><li><a href="/rss.xml" data-label="RSS" aria-label="RSS 订阅源">RSS</a></li><li><a href="/about/" data-label="About">About</a></li></ul></nav></header><main id="main-content"><article><div class="post-header"><h1>SS Manager 折腾笔记</h1><div class="post-meta"><time datetime="2018-10-04T00:00:00.000Z">发布于 2018-10-04</time><time datetime="2019-04-17T00:00:00.000Z">最后编辑于 2019-04-17</time></div></div><p>因为我也拿着 RB 叔叔某一辆车的钥匙，而另一辆车上某些乘客又需要转移过来，因此我需要给他们都准备一下配置。</p>
+<p>众所周知（？）<code>shadowsocks-libev</code> 是不资瓷 <code>port_passward</code> 这种配置方便但是管理不便的配置项的，所以仍然是在 RB 叔叔的提醒下，我了解到了 <code>shadowsocks-manager</code>。</p>
+<p>虽然在写下这段话的时候，我才刚打开 <code>ss-manager</code> 的 GitHub 页面，但是我对于成功有着强烈的信心。</p>
+<p><strong>本文未包含任何有深度的内容</strong></p>
+<!-- more -->
+<h2 id="一言以蔽之">一言以蔽之</h2>
+<p><code>ss-manager</code> 通过 <code>--manager-address</code> 选项监听端口 <code>port 1</code>，而 <code>ssmgr (type s)</code> 作为它的前台，会发送指令到 <code>port 1</code>，同时监听 <code>port 2</code>，<code>ssmgr (type m)</code> 就是最终的总管，（通过插件提供的各种方式）管理一系列 <code>ssmgr (type s)</code>。</p>
+<h2 id="正文">正文</h2>
+<p>首先当然是读 Readme 安装了，因为突然发现这辆车没有 <code>node</code>，所以先去装了 <code>node</code>。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> --silent</span><span style="color:#79B8FF"> --location</span><span style="color:#9ECBFF"> https://rpm.nodesource.com/setup_8.x</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> sudo</span><span style="color:#9ECBFF"> bash</span><span style="color:#9ECBFF"> -</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> yum</span><span style="color:#79B8FF"> -y</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> nodejs</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> npm</span><span style="color:#9ECBFF"> i</span><span style="color:#79B8FF"> -g</span><span style="color:#9ECBFF"> shadowsocks-manager</span><span style="color:#79B8FF"> --unsafe-perm</span></span></code></pre>
+<p>安装 <code>shadowsocks-libev</code> 的过程略。</p>
+<p>接下来是写给 <code>ssmgr (type s)</code> 使用的配置文件，它会作为上述 <code>ss-manager</code> 的前台，方便起见，我选择直接改默认配置文件 <code>~/.ssmgr/default.yml</code>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># ~/.ssmgr/default.yml</span></span>
+<span class="line"><span style="color:#85E89D">type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">s</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">shadowsocks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  address</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">127.0.0.1:端口1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">manager</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  address</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">0.0.0.0:端口2</span></span>
+<span class="line"><span style="color:#85E89D">  password</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'密码'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">db</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'db.sqlite'</span></span></code></pre>
+<p>接下来是管理器，项目的 Readme 里面列了四种管理方式，有兴趣自己去看，配置方式大同小异。仍然是出于方便考虑及个人兴趣，我选择了 <code>telegram</code>。</p>
+<p>首先去找 <a href="https://telegram.me/BotFather" target="_blank" rel="noopener noreferrer">BotFather<span class="sr-only">（在新窗口打开）</span></a> 新建了个机器人，获得 token，接下来写配置，新建配置于 <code>~/.ssmgr/telegram.yml</code>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># ~/.ssmgr/telegram.yml</span></span>
+<span class="line"><span style="color:#85E89D">type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">m</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">manager</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  address</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">127.0.0.1:端口2</span></span>
+<span class="line"><span style="color:#85E89D">  password</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'密码'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">plugins</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  telegram</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    use</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#85E89D">    token</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'token'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">db</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'telegram.sqlite'</span></span></code></pre>
+<p>然后写启动脚本，放在一个我开心就好的地方：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">setsid</span><span style="color:#9ECBFF"> ss-manager</span><span style="color:#79B8FF"> -m</span><span style="color:#9ECBFF"> 加密方式</span><span style="color:#79B8FF"> -u</span><span style="color:#79B8FF"> --manager-address</span><span style="color:#9ECBFF"> 127.0.0.1:端口1</span><span style="color:#E1E4E8"> &#x26;</span></span>
+<span class="line"><span style="color:#B392F0">setsid</span><span style="color:#9ECBFF"> ssmgr</span><span style="color:#E1E4E8"> &#x26;</span></span>
+<span class="line"><span style="color:#B392F0">setsid</span><span style="color:#9ECBFF"> ssmgr</span><span style="color:#79B8FF"> -c</span><span style="color:#9ECBFF"> ~/.ssmgr/telegram.yml</span><span style="color:#E1E4E8"> &#x26;</span></span></code></pre>
+<p>试运行一下，没有问题，那就可以准备添加开机启动了，至于如何添加开机启动，那就请大家根据自己的情况，另请高明吧。</p></article><nav class="post-nav" aria-label="文章导航"><span><a href="/posts/2018-08-28-risk-of-rain/">← 上一篇</a></span><span><a href="/posts/2018-12-31-summary/">下一篇 →</a></span></nav></main><footer><small>(C) 2015–2026 Esphas</small></footer></div></div></div></body></html>
